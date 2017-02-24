@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_fibonacci"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.kcgz.interview.FibonacciActivity">
+
+    <com.kcgz.interview.view.ViewGroup1
+        android:id="@+id/vg001"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorAccent"
+        android:orientation="vertical">
+
+
+        <com.kcgz.interview.view.ViewGroup2
+            android:layout_margin="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:background="#00ff00"
+            android:orientation="vertical">
+            <com.kcgz.interview.view.MyView1
+                android:id="@+id/myView1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="#fff"
+                android:text="textview1" />
+            <com.kcgz.interview.view.MyView2
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="#dedede"
+                android:text="textview2"/>
+        </com.kcgz.interview.view.ViewGroup2>
+
+
+    </com.kcgz.interview.view.ViewGroup1>
+
+</RelativeLayout>
