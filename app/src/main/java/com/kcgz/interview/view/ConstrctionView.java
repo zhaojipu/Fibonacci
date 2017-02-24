@@ -1,7 +1,6 @@
 package com.kcgz.interview.view;
 
 import android.content.Context;
-import android.util.AttributeSet;
 import android.widget.TextView;
 
 /**
@@ -16,7 +15,4 @@ public class ConstrctionView extends TextView {
         super(context);
     }
 
-    public ConstrctionView(Context context, AttributeSet attrs) {
-        super(context, attrs);
-    }
 }
