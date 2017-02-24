@@ -3,7 +3,6 @@ package com.kcgz.interview.view;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.util.AttributeSet;
-import android.view.MotionEvent;
 import android.widget.LinearLayout;
 
 /**
@@ -14,46 +13,16 @@ import android.widget.LinearLayout;
 
 public class ViewGroup1 extends LinearLayout {
     public static final String TAG="viewgroup1";
-    public ViewGroup1(Context context) {
-        super(context);
-    }
 
+    //这里只重写了两个参数的构造函数
     public ViewGroup1(Context context, AttributeSet attrs) {
         super(context, attrs);
-    }
-
-    public ViewGroup1(Context context, AttributeSet attrs, int defStyleAttr) {
-        super(context, attrs, defStyleAttr);
-    }
-
-
-
-    @Override
-    public boolean dispatchTouchEvent(MotionEvent ev) {
-        boolean dispatch=super.dispatchTouchEvent(ev);
-        ViewUtils.viewLog(TAG+"dispatchTouchEvent",ev,dispatch);
-        return dispatch;
-    }
-
-    @Override
-    public boolean onInterceptTouchEvent(MotionEvent ev) {
-        boolean dispatch=super.onInterceptTouchEvent(ev);
-        ViewUtils.viewLog(TAG+"onInterceptTouchEvent",ev,dispatch);
-        return dispatch;
-    }
-
-    @Override
-    public boolean onTouchEvent(MotionEvent event) {
-        boolean dispatch=super.onTouchEvent(event);
-        ViewUtils.viewLog(TAG+"dispatchTouchEvent",event,dispatch);
-        return dispatch;
     }
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         ViewUtils.i(TAG,"onMeasure开始执行");
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-
         ViewUtils.i(TAG,"onMeasure执行完毕");
     }
 

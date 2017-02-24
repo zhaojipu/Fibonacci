@@ -27,21 +27,24 @@ public class MyView2 extends TextView {
     }
 
     @Override
-    protected void onLayout(boolean changed, int l, int t, int r, int b) {
-        super.onLayout(changed,l,t,r,b);
-        ViewUtils.i(TAG,"onLayout");
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        ViewUtils.i(TAG,"onMeasure开始执行");
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        ViewUtils.i(TAG,"onMeasure执行完毕");
     }
 
     @Override
-    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-        ViewUtils.i(TAG,"onMeasure");
+    protected void onLayout(boolean changed, int l, int t, int r, int b) {
+        ViewUtils.i(TAG,"onLayout开始执行");
+        super.onLayout(changed, l, t, r, b);
+        ViewUtils.i(TAG,"onLayout执行完毕");
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
+        ViewUtils.i(TAG,"onDraw开始执行");
         super.onDraw(canvas);
-        ViewUtils.i(TAG,"onDraw");
+        ViewUtils.i(TAG,"onDraw执行完毕");
     }
 
     @Override

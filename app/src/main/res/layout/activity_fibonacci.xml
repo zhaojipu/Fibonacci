@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.kcgz.interview.FibonacciActivity">
-
+<!--ViewGroup1继承LinearLayoou-->
     <com.kcgz.interview.view.ViewGroup1
         android:id="@+id/vg001"
         android:layout_width="match_parent"

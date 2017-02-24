@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(this,ConstructionActivity.class));
                 break;
             case R.id.button_2:
+                startActivity(new Intent(this,FibonacciActivity.class));
                 break;
             case R.id.button_3:
                 break;
