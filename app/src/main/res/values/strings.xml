@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Fibonacci</string>
+    <string name="button_1">自定义view默认构造器</string>
+    <string name="button_2">Fibonacci</string>
+    <string name="button_3">Fibonacci</string>
+    <string name="button_4">Fibonacci</string>
 </resources>
