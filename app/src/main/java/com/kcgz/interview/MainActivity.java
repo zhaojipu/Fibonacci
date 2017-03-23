@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(this,FibonacciActivity.class));
                 break;
             case R.id.button_3:
+                startActivity(new Intent(this,MyProgressbarActivity.class));
                 break;
             case R.id.button_4:
                 break;
