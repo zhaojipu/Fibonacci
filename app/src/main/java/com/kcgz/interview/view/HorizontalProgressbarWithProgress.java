@@ -98,6 +98,9 @@ public class HorizontalProgressbarWithProgress extends ProgressBar {
                     +getPaddingTop()
                     //取进度条跟文字高度的最大值
                     +Math.max(Math.max(mReachHeight,mUnReachHeight),Math.abs(textHeight));
+            if (mode==MeasureSpec.AT_MOST){
+                result=Math.max(size,result);
+            }
         }
         return result;
     }

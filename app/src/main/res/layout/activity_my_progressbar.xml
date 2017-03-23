@@ -30,7 +30,7 @@
             android:progress="100"
             app:progress_reach_color="#00ff00"
             app:progress_text_offset="10dp"
-            app:progress_text_size="30sp"
+            app:progress_text_size="50sp"
             app:progress_text_color="#000"/>
     </LinearLayout>
 </ScrollView>
