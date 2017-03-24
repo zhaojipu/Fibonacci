@@ -5,10 +5,10 @@ import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.util.AttributeSet;
-import android.util.TypedValue;
 import android.widget.ProgressBar;
 
 import com.kcgz.interview.R;
+import com.kcgz.interview.utils.SizeUtils;
 
 /**
  * Author:zhao
@@ -18,7 +18,7 @@ import com.kcgz.interview.R;
 
 public class HorizontalProgressbarWithProgress extends ProgressBar {
     //设置默认的属性
-    private static final int DEFAULT_TEXT_SIZE = 30;//SP
+    private static final int DEFAULT_TEXT_SIZE = 20;//SP
     private static final int DEFAULT_TEXT_COLOR = 0xFFC00D1;//
     private static final int DEFAULT_COLOR_UNREACH = 0xFFD3D6DA;//SP
     private static final int DEFAULT_HEIGHT_UNREACH = 2;//DP
@@ -27,14 +27,15 @@ public class HorizontalProgressbarWithProgress extends ProgressBar {
     private static final int DEFAULT_TEXT_OFFSET = 10;//DP
 
     //转化默认属性
-    private int mTextSize=sp2px(DEFAULT_TEXT_SIZE);
-    private int mTextOffset=dp2px(DEFAULT_TEXT_OFFSET);
+    private int mTextSize;
+    private int mTextOffset;
     private int mTextColor=DEFAULT_TEXT_COLOR;
     private int mUnReachColor=DEFAULT_COLOR_UNREACH;
-    private int mUnReachHeight=dp2px(DEFAULT_HEIGHT_UNREACH);
+    private int mUnReachHeight;
     private int mReachColor=DEFAULT_COLOR_REACH;
-    private int mReachHeight=dp2px(DEFAULT_HEIGHT_REACH);
+    private int mReachHeight;
 
+    private Context mContext;
     private Paint mPaint=new Paint();
     private int mRealWidth;
     public HorizontalProgressbarWithProgress(Context context) {
@@ -47,7 +48,11 @@ public class HorizontalProgressbarWithProgress extends ProgressBar {
 
     public HorizontalProgressbarWithProgress(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-
+        this.mContext=context;
+        mTextOffset = SizeUtils.dp2px(mContext,DEFAULT_TEXT_OFFSET);
+        mUnReachHeight = SizeUtils.dp2px(mContext,DEFAULT_HEIGHT_UNREACH);
+        mReachHeight = SizeUtils.dp2px(mContext,DEFAULT_HEIGHT_REACH);
+        mTextSize = SizeUtils.sp2px(mContext,DEFAULT_TEXT_SIZE);
         obtainStyleAttrs(attrs);
     }
 
@@ -56,7 +61,6 @@ public class HorizontalProgressbarWithProgress extends ProgressBar {
      * @param attrs
      */
     private void obtainStyleAttrs(AttributeSet attrs) {
-        mPaint.setTextSize(DEFAULT_TEXT_SIZE);
         TypedArray ta=getContext().obtainStyledAttributes(attrs,
                 R.styleable.HorizontalProgressbarWithProgress);
         mTextColor=ta.getColor(R.styleable.HorizontalProgressbarWithProgress_progress_text_color,mTextColor);
@@ -67,6 +71,7 @@ public class HorizontalProgressbarWithProgress extends ProgressBar {
         mReachColor=ta.getColor(R.styleable.HorizontalProgressbarWithProgress_progress_reach_color,mReachColor);
         mReachHeight= (int) ta.getDimension(R.styleable.HorizontalProgressbarWithProgress_progress_reach_height,mReachHeight);
 
+        mPaint.setTextSize(mTextSize);
         ta.recycle();
     }
 
@@ -143,15 +148,5 @@ public class HorizontalProgressbarWithProgress extends ProgressBar {
         canvas.restore();
     }
 
-    /**
-     * 将dp单位转化为px
-     * @param dpVal 传入的dp值
-     * @return 返回的px值
-     */
-    private int dp2px(int dpVal){
-        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,dpVal,getResources().getDisplayMetrics());
-    }
-    private int sp2px(int spVal){
-        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP,spVal,getResources().getDisplayMetrics());
-    }
+
 }

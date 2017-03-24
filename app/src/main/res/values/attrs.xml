@@ -19,4 +19,11 @@
         <attr name="progress_text_offset" />
     </declare-styleable>
 
+    <declare-styleable name="CircleProgressbarWithProgress">
+        <attr name="progress_reach_color" />
+        <attr name="progress_reach_height" />
+        <attr name="progress_text_color" />
+        <attr name="progress_text_size" />
+        <attr name="progress_text_offset" />
+    </declare-styleable>
 </resources>
