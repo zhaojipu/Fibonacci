@@ -3,5 +3,5 @@
     <string name="button_1">自定义view默认构造器(点击崩溃)</string>
     <string name="button_2">通过Log输出查看view的绘制过程</string>
     <string name="button_3">自定义带进度的Progressbar</string>
-    <string name="button_4">Fibonacci</string>
+    <string name="button_4">OkGo框架的使用</string>
 </resources>
