@@ -20,6 +20,10 @@
         <activity android:name=".ConstructionActivity" />
         <activity android:name=".MyProgressbarActivity" />
         <activity android:name=".OkGoActivity"></activity>
+        <provider
+            android:authorities="com.kcgz.interview.app.MyContentProvider"
+            android:name=".app.MyContentProvider"
+            />
     </application>
 
 </manifest>
