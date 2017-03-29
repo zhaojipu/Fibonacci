@@ -19,11 +19,13 @@
         </activity>
         <activity android:name=".ConstructionActivity" />
         <activity android:name=".MyProgressbarActivity" />
-        <activity android:name=".OkGoActivity"></activity>
+        <activity android:name=".OkGoActivity" />
+
         <provider
-            android:authorities="com.kcgz.interview.app.MyContentProvider"
             android:name=".app.MyContentProvider"
-            />
+            android:authorities="com.kcgz.interview.app.MyContentProvider" />
+
+        <activity android:name=".SlidingActicity"></activity>
     </application>
 
 </manifest>
